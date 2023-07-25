@@ -1,0 +1,31 @@
+body {
+    font-size: 16px;
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+    line-height: 1;
+    /* 단어단위로 줄바꿈 설정 word-break */
+    word-break: keep-all;
+}
+
+/* Header */
+
+header {
+    
+}
+
+
+header .inner {
+    
+}
+
+
+header ul.menu{
+    
+}
+
+header ul.menu li{
+    
+}
+
+header ul.menu li a{
+    
+}
