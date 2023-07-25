@@ -14,7 +14,7 @@ background-image를 통해 검색엔진을 위해 대체 텍스트를 사용했�
 <img src='./troubleIMG/folderPath.png' alt='폴더 경로이미지' width='500px' height='220px'/> 
 <img src='./troubleIMG/imgNotfound.png' alt='notfound이미지' width='500px'/><br>
 <strong>해결방안</strong> <br>
-1. 캐시, 검색기록 삭제 (해결 x)
+1. 캐시, 검색기록 삭제 (해결 x) <br>
 2. css파일 연결 link 태그 src경로에 ?after를 추가(./css//main.css?after)(해결x) <br>
 url 경로를 잘보니 imges폴더를 css폴더 안에서 찾고있는것을 발견했다.<br> 경로가 왜 저렇게 인식되는지는 모르겠지만 ../하나더 추가해서 해결 <br>
 <img src='./troubleIMG//urlResolve.png' alt='url 해결'/>
