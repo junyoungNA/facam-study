@@ -47,18 +47,19 @@ header ul.menu li.basket-starter a {
     text-indent: -9999px;
     background-repeat: no-repeat;
     background-position: center 13px;
+    /* background-color: wheat; */
 }
 
 header ul.menu li.apple-logo a {
-    background-image: url("../images/header_apple.svg");
+    background-image: url("../../images/header_apple.svg");
 }
 
 header ul.menu li.search-starter a {
-    background-image: url("../images/header_search.svg");
+    background-image: url("../../images/header_search.svg");
 }
 
 header ul.menu li.basket-starter a {
-    background-image: url("../images/header_bag.svg");
+    background-image: url("../../images/header_bag.svg");
 }
 
 header ul.menu li a:hover {
