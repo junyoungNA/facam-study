@@ -6,7 +6,15 @@ stretch 속성이 된다. <br> (교차축에서 최대한 늘어나려는 성질
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent'>text-indent</a>
  : 내어쓰기,들여쓰기 빈공간을 만들어 글의 시작지점을 조정
 background-image를 통해 검색엔진을 위해 대체 텍스트를 사용했을때 -9999px 속성을 적용해서 텍스트가 안보이게 할 수 있음
-<br>
+<br><br>
+
+<h2>Javascirpt </h2>
+<h4>이벤트버블링</h4>
+  <ul>
+    <li>이벤트 버블링 현상은 상속관계에 있는 html태그들 중 이벤트가 발생했을때 상속관계에 있는 요소들까지 이벤트가 전달되는 현상</li>
+    <li>addEventListener시 발생되는 콜백함수에는 암묵적으로 event객체가 인자로 전달된다.</li>
+    <li>전달 받은 event객체로 event.stopPropagation() 메소드를 활용해 이벤트 버블링을 막을수있음</li>
+  </ul>
 
 <h2>트러블 슈팅</h2> 
 <h4>backgroud이미지 url사용시 notfound </h4>
