@@ -15,6 +15,13 @@ background-image를 통해 검색엔진을 위해 대체 텍스트를 사용했�
     <li>addEventListener시 발생되는 콜백함수에는 암묵적으로 event객체가 인자로 전달된다.</li>
     <li>전달 받은 event객체로 event.stopPropagation() 메소드를 활용해 이벤트 버블링을 막을수있음</li>
   </ul>
+  <h4><a href='https://ko.javascript.info/script-async-defer'>defer/async</a> </h4>
+   <ul>
+   <li>script태그의 defer 속성은 페이지가 모두 로드된 후에 해당 외부 스크립트가 실행됨을 명시함</li>
+    <li>script 태그의 async 속성은 스크립트가 나머지 페이지와는 비동기적으로 실행됨을 나타내며, 브라우저가 페이지를 파싱하는 동안에도 스크립트가 사용가능해지면 곧바로 실행됨을 명시함.
+
+</li>
+   </ul>
 
 <h2>트러블 슈팅</h2> 
 <h4>backgroud이미지 url사용시 notfound </h4>
