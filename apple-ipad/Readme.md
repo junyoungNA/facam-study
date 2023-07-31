@@ -6,7 +6,9 @@ stretch 속성이 된다. <br> (교차축에서 최대한 늘어나려는 성질
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent'>text-indent</a>
  : 내어쓰기,들여쓰기 빈공간을 만들어 글의 시작지점을 조정
 background-image를 통해 검색엔진을 위해 대체 텍스트를 사용했을때 -9999px 속성을 적용해서 텍스트가 안보이게 할 수 있음
-<br><br>
+<br>
+<a href='https://webclub.tistory.com/541' >음수마진Negative margins</a> : 음수 마진은 문서 내의 정상적인 흐름(document flow) 를 건들이지 않는다고 함. 요소를 이동하기 위해 음수 마진을 사용하면, 그 뒤에 오는 모든 요소들도 같이 이동하게 된다.음수로 마진을 주면 요소를 부모 밖으로 튀어나오게 하거나(부모와 자신의 간격 조정) 형제 요소의 위치를 변경(ex)자기 바로 아래에 있는 형제 요소를 음수 margin-bottom으로 자기 쪽으로 끌어옴할 수 있다.
+<br>
 
 <h2>Javascirpt </h2>
 <h4>이벤트버블링</h4>
