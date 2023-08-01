@@ -7,7 +7,10 @@ stretch 속성이 된다. <br> (교차축에서 최대한 늘어나려는 성질
  : 내어쓰기,들여쓰기 빈공간을 만들어 글의 시작지점을 조정
 background-image를 통해 검색엔진을 위해 대체 텍스트를 사용했을때 -9999px 속성을 적용해서 텍스트가 안보이게 할 수 있음
 <br>
-<a href='https://webclub.tistory.com/541' >음수마진Negative margins</a> : 음수 마진은 문서 내의 정상적인 흐름(document flow) 를 건들이지 않는다고 함. 요소를 이동하기 위해 음수 마진을 사용하면, 그 뒤에 오는 모든 요소들도 같이 이동하게 된다.음수로 마진을 주면 요소를 부모 밖으로 튀어나오게 하거나(부모와 자신의 간격 조정) 형제 요소의 위치를 변경(ex)자기 바로 아래에 있는 형제 요소를 음수 margin-bottom으로 자기 쪽으로 끌어옴할 수 있다.
+<a href='https://webclub.tistory.com/541' >음수마진Negative margins</a> : 음수 마진은 문서 내의 정상적인 흐름(document flow) 를 건들이지 않는다고 함. 요소를 이동하기 위해 음수 마진을 사용하면, 그 뒤에 오는 모든 요소들도 같이 이동하게 된다.음수로 마진을 주면 요소를 부모 밖으로 튀어나오게 하거나(부모와 자신의 간격 조정) 형제 요소의 위치를 변경(ex)자기 바로 아래에 있는 형제 요소를 음수 margin-bottom으로 자기 쪽으로 끌어옴할 수 있다.<br>
+<a href='https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay'>transition-delay</a>  변화되는 시간을 지연시키는 속성 <br>
+헤더바에 서서히 나오고 사라지는 애니메이션을 주기위해 사용
+<img src='./troubleIMG/transitionDelay.png' alt='transition-delay사진'/>
 <br>
 
 <h2>Javascirpt </h2>
@@ -21,9 +24,12 @@ background-image를 통해 검색엔진을 위해 대체 텍스트를 사용했�
    <ul>
    <li>script태그의 defer 속성은 페이지가 모두 로드된 후에 해당 외부 스크립트가 실행됨을 명시함</li>
     <li>script 태그의 async 속성은 스크립트가 나머지 페이지와는 비동기적으로 실행됨을 나타내며, 브라우저가 페이지를 파싱하는 동안에도 스크립트가 사용가능해지면 곧바로 실행됨을 명시함.
-
-</li>
+    </li>
    </ul>
+   <h4><a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse'>reverse 메소드</a></h4>
+  <ul>
+    <li>배열의 순서를 반전시킨다. 첫 번째 요소는 마지막 요소로, 마지막 요소는 첫 번째 요소가 되며 원본 배열을 변환시킨다.(파괴적 처리) </li>
+  </ul>
 
 <h2>트러블 슈팅</h2> 
 <h4>backgroud이미지 url사용시 notfound </h4>

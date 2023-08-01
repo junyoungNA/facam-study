@@ -41,6 +41,7 @@ header ul.menu {
 header ul.menu > li {
     position: relative;
     display: flex;
+    transition: .4s ;
 }
 
 header ul.menu > li > a {
@@ -155,11 +156,13 @@ header .basket ul li a:hover {
 /* Header / Search */
 
 header .search-wrap {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: .4s;
 }
 
 header .search {
@@ -252,11 +255,31 @@ header .search .autocompletes  ul li:hover a{
     background-color: #F5F5F5;
 }
 
+header .serach input,
+header .serach .search-icon,
+header .search .autocompletes h3,
+header .search .autocompletes li {
+    transition: .6s;
+    /* 처음에 있던 요소에 위치에서 100px 이동함*/
+    transform: translate(100px, 0); 
+}
 
 header.searching ul.menu > li {
-    display: none;
+    transform: scale(.7);
+    opacity: 0;
 }
 
 header.searching .search-wrap {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    /* 사라지는 애니메이션과 생기는 애니메이션이 동시에 일어나는것을 방지하기 위한 속성 */
+    transition-delay: .2s;
+}
+
+header .searching .serach input,
+header .searching .serach .search-icon,
+header .searching .search .autocompletes h3,
+header .searching .search .autocompletes li {
+    transition-delay: .2s;
+    transform: translate(0, 0);
 }
