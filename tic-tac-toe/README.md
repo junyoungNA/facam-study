@@ -48,3 +48,19 @@ renderSquare라는 함수를 만들어서 value라는 props 지정 후 jsx 태�
     </li>
     <li>constructor 밖에서는 super를통해 전달받지 않아도 this.props를 전달 받을 수 있지만 constructor안에서 사용하기 위해서 super를 통해 전달받아야함!</li>
 </ul>
+
+<h3>불변성</h3>
+<ul>
+    <li>원시 타입은 불변성을 가지고 있고 참조타입은 그렇지 않다</li>
+    <li>원사타입 : Boolean, String, Numberm null, undefined, Symbol
+    </li>
+    <li>
+        참조타입 : Object, Array
+    </li>
+    <li><strong>원시 타입에 대한 참조 및 값을 저장하기 위해 Call Stack 메모리 공간을 사용 하지만 참조 타입의 경우 Heap이라는 별도의 메모리 공간을 사용한다. Call Stack은 객체 및 배열 값이 아닌 메모리에만 Heap 메모리 참조 ID를 값으로 지정</strong></li>
+    <li>원시 타입은 고정된 크키로 Call Stack 메모리에 저장 실제 데이터 변수 할당</li>
+    <li>데이터 크기가 정해지지 않고 Call Stack 메모리에 저장, 데이터의 값이 heap에 저정되며 heap메모리에 주소값이 할당</li>
+    <h4>불변성을 지켜야 하는 이유?</h4>
+    <li>참조 타입에서 객체나 배열의 값이 변할 때 원본 데이터가 변경되기에 이 원본 데이터를 참조하고 있는 다른 객체에서 예상치 못한 오류가 발생할 수 있어서 프로그래밍의 복잡도가 올라간다</li>
+      <li>리액트에서 화면을 업데이트할 때 불변성을 지켜서 값을 이전 값과 비교해서 변경된 사항을 확인한 후 업데이트하기 때문에 불변성을 지켜줘야 합니다.</li>
+</ul>
