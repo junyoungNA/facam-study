@@ -64,3 +64,18 @@ renderSquare라는 함수를 만들어서 value라는 props 지정 후 jsx 태�
     <li>참조 타입에서 객체나 배열의 값이 변할 때 원본 데이터가 변경되기에 이 원본 데이터를 참조하고 있는 다른 객체에서 예상치 못한 오류가 발생할 수 있어서 프로그래밍의 복잡도가 올라간다</li>
       <li>리액트에서 화면을 업데이트할 때 불변성을 지켜서 값을 이전 값과 비교해서 변경된 사항을 확인한 후 업데이트하기 때문에 불변성을 지켜줘야 합니다.</li>
 </ul>
+
+<h3>HOC (Higher Order Component) 란?</h3>
+<ul>
+    <li>화면에서 재사용 가능한 로직만을 분리해서 components로 만들고, 재사용 불가능한 UI와 같은 다른 부분들은 parameter로 받아서 처리하는 방법</li>    
+    <li>Hooks가 나오기 이전에는 많은 Wrapper 컴포넌트가 생길 수 있는 문제가 있었음 
+    데이터의 흐름을 파악하기 힘듬!</li>    
+    <li>React Hooks에서 Hoc대신에 따로 Custom hooks를 이용해서 컴포넌트를 만들어서 처리를 한다</li>    
+</ul>
+
+<h3>리액트 Batching</h3>
+<a href='https://react.dev/blog/2022/03/29/react-v18#new-feature-automatic-batching'>리액트 원본 링크 </a>
+Batching이란 React가 더 나은 성능을 위해 여러개의 state 업데이트를 한 번의 리렌더링으로 묶어서 진행하는 것을 말한다.Batching은 반드시 필요한 하나의 리렌더링을 수행한다.
+<img src='./noteImg//batching.png'/>
+해당 주석된 코드는 batching 기능에 의해 해당코드가 여러번 시도되어도 한번만 실행하게 된다.
+하지만 밑에있는 안에서 콜백함수를 통해 prev인자를 받아 이전 state를 참조해 변경을 주면 batching 기능에 감지되지않고 여러번 수행 가능하다.
