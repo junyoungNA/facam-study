@@ -6,7 +6,7 @@ const Square = ({squares, handleClick}) => {
     return (
         <div>
             {squares?.map((item, i) => 
-                <button className='square' onClick={() => handleClick(i, squares)}>{item}</button>
+                <button className='square' onClick={() => handleClick(i)} key={i}>{item}</button>
             )}
         </div>
         
