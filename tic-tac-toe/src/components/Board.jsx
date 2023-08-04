@@ -4,7 +4,7 @@ import Square from './Square';
 
 function Board({squares, handleClick}) {
         return (
-            <div>
+            <div className='board-warpper'>
                 <Square handleClick={handleClick}  squares={squares}/>
             </div>
         )

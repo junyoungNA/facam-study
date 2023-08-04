@@ -51,7 +51,7 @@ const moves = history.map((step, move) => {
     'Go to game start';
     return (
       <li key={move}> 
-        <button onClick={() => {jumpTo(move)}}>{desc}</button>
+        <button className='move-button' onClick={() => {jumpTo(move)}}>{desc}</button>
       </li>
     )
 });
@@ -79,7 +79,7 @@ const moves = history.map((step, move) => {
       </div>
       <div className='game-info'>
         <div className='status'>{status} </div>
-        <ol>{moves}</ol>
+        <ol style={{listStyle:'none' , padding:'0'}}>{moves}</ol>
       </div>
     </div>
   );
