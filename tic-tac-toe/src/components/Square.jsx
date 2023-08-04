@@ -2,7 +2,7 @@ import React from 'react';
 import './Square.css';
 
 const Square = ({squares, handleClick}) => {
-    console.log(squares);
+
     return (
         <div>
             {squares?.map((item, i) => 
