@@ -61,3 +61,12 @@
         </ul>
        <img src='./noteImg/BEM.png'/>
 </ul>
+
+<h3>gird CSS</h3>
+<ul>
+    <li>Flex Box 는 단순히 1차원(행, 열 하나씩) 레이아웃을 제공하는데 CSS grid는 2차원 (행과 열) 의 레이아웃 시스템을 제공한다.</li>
+    <img src='./noteImg/gridTemplate.png'/>
+    <img src='./noteImg/gridRepeat.png'/>
+    <img src='./noteImg/grid1Fr.png'/>
+    <img src='./noteImg/gridStartEnd.png'/>
+</ul>
