@@ -34,3 +34,10 @@
 * https://authjs.dev/reference/adapter/prisma
   코드 스니펫 복사후 사용
   <img src='./noteImg/nextAuthUse.png'>
+
+### Next-auth 트러블 슈팅
+ * Next-auth 사용도중 signIn함수를 통해 next-auth 가 제공해주는 로그인 페이지로 이동해야하는 상황에서
+  http://localhost:3000/api/auth/error 404 에러가 계속해서 발생했다 구글링을 통해 node 버젼 문제, env NEXTAUTH_URL 경로 등 시도를 많이 해보았지만 해결되지않았다.
+  *그러다 경로에서 404 문제가 발생하는 것으로 보아 
+   현재 [...nextauth].ts 경로 위치에 문제가 있는 것 같아 src/app 폴더가 아닌 src/ 경로에 위치하도로 app폴더에서 한번 빼주니 해결하였다.
+   ![nextauth404](./noteImg//nextAuthTrouble.png)
