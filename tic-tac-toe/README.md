@@ -103,7 +103,7 @@ Batching이란 React가 더 나은 성능을 위해 여러개의 state 업데이
         <h4>
         메모이제이션(Memoization)</h4>
         <li>Memoization은 주어진 입력값에 대한 결과를 저장함으로써 같은 입력값에 대해 함수가 한번만 실행되는 것을 보장한다.</li>
-        <li>React.memo()시에 props, props 객체를 비교할 때 얕은 비교를 한다.</li>
+        <li>React.memo()시에 props, props 객체를 비교할 때 <strong>얕은 비교를 한다.</strong></li>
         <h4>React.memo()사용을 지양해야하는 상황</h4>
         <li>props가 자주 변하는 컴포넌트를 React.memo()로 래핑 하더라도 React는 두가지 작업을 리렌더링 할 때마다 수행한다. <br>
         1. 이전 props와 다음 props 의 동등 비교를 위해 함수를 수행한다. <br> 

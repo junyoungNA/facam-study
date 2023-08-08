@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
 const Nav = () => {
+
     const [show, setShow] = useState(false);
 
     useEffect(() => {
@@ -15,7 +16,7 @@ const Nav = () => {
         return () => {
             window.removeEventListener('scroll', () => {})
         }
-    } , [])
+    } , [show])
 
     return (
         <NavWrapper show={show}>
