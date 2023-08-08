@@ -13,10 +13,11 @@ const Banner = () => {
         const res = await axios.get(requests.fetchNowPlaying);
         const movieData = res.data.results;
         const movieId = movieData[Math.floor(Math.random() * movieData.length)].id;
-        
+        console.log(movieId);
         const {data : movieDetail} = await axios.get(`movie/${movieId}`, {
             params : {appned_to_response : 'videos'}
         });
+        console.log(movieDetail);
         setMovie(movieDetail);
     }
 
