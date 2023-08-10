@@ -23,9 +23,10 @@ const RegisterPage = () => {
     const onSubmit:SubmitHandler<FieldValues> = async (body) => {
         seIstLoading(true);
         try {
-            const {data} = await axios.post('/api/register',body);
-            console.log(data);
-            router.push('/auth/login');
+            const res = await axios.post('/api/register',body);
+            console.log(body,'body');
+            console.log(res,'data');
+            // router.push('/auth/login');
         } catch (error) {
             console.log(error);
         }
