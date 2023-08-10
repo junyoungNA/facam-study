@@ -24,9 +24,7 @@ const RegisterPage = () => {
         seIstLoading(true);
         try {
             const res = await axios.post('/api/register',body);
-            console.log(body,'body');
-            console.log(res,'data');
-            // router.push('/auth/login');
+            router.push('/auth/login');
         } catch (error) {
             console.log(error);
         }
@@ -67,7 +65,7 @@ const RegisterPage = () => {
                 <p className='text-gray-400'>
                     Alreay a member? {" "}
                         <Link href='/auth/login' className='text-black hover:underline'>
-                            Login
+                            Register
                         </Link>
                     
                 </p>

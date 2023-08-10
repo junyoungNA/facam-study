@@ -5,6 +5,7 @@ import React from 'react'
 
 const NavItem = ({mobile} : {mobile?: boolean} ) => {
     const {data : session, status} = useSession();
+    console.log(session, 'navitem');
     return (
         <ul className={`text-md justify-center flex gap-4 item-center ${mobile && "flex-col h-full" } `}>
             <li className='py-2 text-center border-b-4 curso -pointer'><Link href='/admin'>admin</Link></li>

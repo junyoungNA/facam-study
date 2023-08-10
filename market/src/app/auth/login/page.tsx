@@ -4,7 +4,6 @@ import { FieldValues, SubmitHandler, useForm} from 'react-hook-form';
 import Input from '@/app/components/Input';
 import Button from '@/app/components/Button';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 
 const LoginPage = () => {
@@ -57,7 +56,7 @@ const LoginPage = () => {
                 <p className='text-gray-400'>
                     Not a member? {" "}
                         <Link href='/auth/Register' className='text-black hover:underline'>
-                            Register
+                            Login
                         </Link>
                     
                 </p>
