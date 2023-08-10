@@ -41,3 +41,7 @@
   *그러다 경로에서 404 문제가 발생하는 것으로 보아 
    현재 [...nextauth].ts 경로 위치에 문제가 있는 것 같아 src/app 폴더가 아닌 src/ 경로에 위치하도로 app폴더에서 한번 빼주니 해결하였다.
    ![nextauth404](./noteImg//nextAuthTrouble.png)
+
+   ### Next-auth getServerSession
+
+   *
