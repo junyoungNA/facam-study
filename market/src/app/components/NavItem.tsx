@@ -8,8 +8,8 @@ const NavItem = ({mobile} : {mobile?: boolean} ) => {
     console.log(session, status);
     return (
         <ul className={`text-md justify-center flex gap-4 item-center ${mobile && "flex-col h-full" } `}>
-            <li className='py-2 text-center border-b-4 curso -pointer'><Link href='/a'>admin</Link></li>
-            <li className='py-2 text-center border-b-4 cursor-pointer'><Link href='/a'>User</Link></li>
+            <li className='py-2 text-center border-b-4 curso -pointer'><Link href='/admin'>admin</Link></li>
+            <li className='py-2 text-center border-b-4 cursor-pointer'><Link href='/user'>User</Link></li>
             {session?.user  
                 ?      
             <li className='py-2 text-center border-b-4 cursor-pointer'><button onClick={() => signOut()}>Signout</button></li>
