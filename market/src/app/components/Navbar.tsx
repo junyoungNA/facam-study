@@ -10,7 +10,6 @@ interface NavbarProps {
 
 const Navbar:React.FC<NavbarProps> = ({currentUser}) => {
     const [menu, setMenu] = useState(false);
-    console.log(currentUser);
 
     const handleMenu = () => {
         setMenu(!menu);
