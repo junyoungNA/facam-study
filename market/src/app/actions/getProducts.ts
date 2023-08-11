@@ -11,8 +11,15 @@ export default async function getProducts (params : ProductsParams) {
         const {latitude, longitude, category} = params;
 
         let query : any = {};
+
+        //카테고리가 있다면 query.category에 category를 추가
+        //해당 category url 로 이동
+        if(category) {
+            query.category = category;
+        }
         
         if(latitude) {
+            //맵 화면에서 보여진 상품 범위을 더 크게 잡기위해
             query.latitude = {
                 gte : Number(latitude) - 0.01,
                 let : Number(latitude) + 0.01
@@ -20,6 +27,7 @@ export default async function getProducts (params : ProductsParams) {
         }
 
         if(longitude){
+             //맵 화면에서 보여진 상품 범위를 더 크게 잡기위해
             query.longitude = {
                 gte : Number(longitude) - 0.01,
                 lte : Number(longitude) + 0.01,
