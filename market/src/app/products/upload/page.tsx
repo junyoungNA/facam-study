@@ -9,8 +9,11 @@ import ImageUpload from '@/app/components/ImageUpload';
 import { categories } from '@/app/components/categories/Categories';
 import CategoryInput from '@/app/components/categories/CategoryInput';
 import dynamic from 'next/dynamic';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const ProductUploadPage = () => {
+    const router =useRouter();
     const [isLoading, setIsLoading] = useState(false);
 
     const {register , handleSubmit, setValue, watch, formState : {
@@ -39,7 +42,18 @@ const ProductUploadPage = () => {
     })
 
     const onsubmit:SubmitHandler<FieldValues> = (data) => {
-        
+        setIsLoading(true);
+        console.log(data,'data');
+        axios.post('/api/products', data).then (response => {
+            console.log(response,'response')
+            // router.push(`products/${response.data.id}`);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        .finally(() => {
+            setIsLoading(false);
+        })
     }
 
     const setCustomValue = (id: string, value: any) => {

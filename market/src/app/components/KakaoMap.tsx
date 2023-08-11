@@ -21,7 +21,7 @@ const KakaoMap = ({
         if (detailPage) return;
         //디테일 페이지라면 setCustomValue를 내려주지않음!
         setCustomValue!('latitude', mouseEvent.latLng.getLat());
-        setCustomValue!('longtude', mouseEvent.latLng.getLng());
+        setCustomValue!('longitude', mouseEvent.latLng.getLng());
     }
 
     return (

@@ -75,7 +75,7 @@ model Product {
   title       String
   description String
   imageSrc    String
-  categody    String
+  category    String
   userId      String
   price       Int
   latitude    Float
