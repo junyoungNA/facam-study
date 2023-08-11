@@ -16,10 +16,12 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
         console.log('result',result);
         onChange(result.info.secure_url);
     }
+    //cloudinary preset 이름 설정
+    const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
     return (
         <CldUploadWidget
             onUpload={handleUpload}
-            uploadPreset={'ijijie'}
+            uploadPreset={uploadPreset}
             options={{
                 maxFiles:1
             }}

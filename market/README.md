@@ -59,3 +59,14 @@
 
 * https://next-auth.js.org/configuration/nextjs next.Js 본문
   ![getServerSession](./noteImg/getServerSession.png)
+
+### Cloundinary
+
+- 클라우드 기반의 이미지 및 비디오 관리 서비스이다. 강력하면서 쉬운 API를 제공하고 있으며. 무료로 사용할 수 있다.
+- Cloudinary에서는 URL 파라미터를 통해 쉽게 이미지를 리사이징 할 수 있습니다.
+- 원본 비율과 다른 사이즈가 필요할 때는 이미지가 왜곡되어 보이지 않도록 이미지를 크롭해야 합니다. Cloudinary에서는 리사이징과 마찬가지로 URL 파라미터를 통해 쉽게 이미지를 크롭할 수 있습니다.
+  - Cloudinary의 이미지 용량과 비주얼 퀄리티 사이에서 최적의 밸런스를 찾아준다고 한다.
+    ![cloudinary](./noteImg/cloudinary.png)
+    ![cloudinaryUse](./noteImg/cloudinaryUse.png)
+    ![cloudinaryConnet](./noteImg/cloudinaryConnet.png)
+- https://cloudinary.com/
