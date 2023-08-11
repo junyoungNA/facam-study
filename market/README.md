@@ -36,12 +36,25 @@
   <img src='./noteImg/nextAuthUse.png'>
 
 ### Next-auth 트러블 슈팅
- * Next-auth 사용도중 signIn함수를 통해 next-auth 가 제공해주는 로그인 페이지로 이동해야하는 상황에서
-  http://localhost:3000/api/auth/error 404 에러가 계속해서 발생했다 구글링을 통해 node 버젼 문제, env NEXTAUTH_URL 경로 등 시도를 많이 해보았지만 해결되지않았다.
-  *그러다 경로에서 404 문제가 발생하는 것으로 보아 
-   현재 [...nextauth].ts 경로 위치에 문제가 있는 것 같아 src/app 폴더가 아닌 src/ 경로에 위치하도로 app폴더에서 한번 빼주니 해결하였다.
-   ![nextauth404](./noteImg//nextAuthTrouble.png)
 
-   ### Next-auth getServerSession
+- Next-auth 사용도중 signIn함수를 통해 next-auth 가 제공해주는 로그인 페이지로 이동해야하는 상황에서
+  http://localhost:3000/api/auth/error 404 에러가 계속해서 발생했다 구글링을 통해 node 버젼 문제, env NEXTAUTH_URL 경로 등 시도를 많이 해보았지만 해결되지않았다. \*그러다 경로에서 404 문제가 발생하는 것으로 보아
+  현재 [...nextauth].ts 경로 위치에 문제가 있는 것 같아 src/app 폴더가 아닌 src/ 경로에 위치하도로 app폴더에서 한번 빼주니 해결하였다.
+- https://next-auth.js.org/configuration/initialization 원문
 
-   *
+  ![nextauth404](./noteImg//nextAuthTrouble.png)
+  ![next_auth](./noteImg/next_auth.png)
+
+### Prisma Client 재사용
+
+- Prisma DB에 게속 접근하기위해(API 요청 후 DB 접근,next-auth apter접근 등) prismaClient를 생성하는 파일 생성
+  ![prisma client](./noteImg/image.png)
+
+### Next-auth getServerSession
+
+- 클라이언트에서는 useSession 을 활용해서 user의 session정보를 next-auth를 통해 가져올 수 있다.
+- 서버 측에서는 etServerSession을 사용하면 session을 받아 클라이언트측으로 전달 가능하다.
+- 데이터베이스와 함께 NextAuth.js를 사용할 때 특히 유용하며 서버 측 에서 사용할 때 API 경로에 대한 추가 항목을 피하기 때문에 응답 시간을 크게 줄일 수 있다. 쿠키 만료 시간을 올바르게 업데이트하고 무언가를 변경한 경우 세션 내용을 업데이트 한다.
+
+* https://next-auth.js.org/configuration/nextjs next.Js 본문
+  ![getServerSession](./noteImg/getServerSession.png)

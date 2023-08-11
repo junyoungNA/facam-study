@@ -5,6 +5,7 @@ import Input from '@/app/components/Input';
 import Button from '@/app/components/Button';
 import  Container from '@/app/components/Container';
 import Heading from '@/app/components/Heading';
+import ImageUpload from '@/app/components/ImageUpload';
 
 const ProductUploadPage = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -23,8 +24,14 @@ const ProductUploadPage = () => {
         }
     })
 
+    const imageSrc = watch('imageSrc');
+
     const onsubmit:SubmitHandler<FieldValues> = (data) => {
         
+    }
+
+    const setCustomValue = (id: string, value: any) => {
+        setValue(id, value);
     }
 
     return (
@@ -38,6 +45,12 @@ const ProductUploadPage = () => {
                         title='Product Upload'
                         subTitle='upload your product'
                     ></Heading>
+                    <ImageUpload
+                        onChange={(value) => setCustomValue('imageSrc', value)}
+                        value = {imageSrc}
+                    >
+
+                    </ImageUpload>
                     <Input
                         id ='title'
                         label='Title'
