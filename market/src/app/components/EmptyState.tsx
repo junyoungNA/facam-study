@@ -33,11 +33,12 @@ const EmptyState = ({
             />
             <div className='w-48 mt-4'>
                 {showReset && 
-                <Button
-                    outline
-                    label='모든 필터 제거'
-                    onClick={() => router.push('')}
-                />}
+                    <Button
+                        outline
+                        label='모든 필터 제거'
+                        onClick={() => router.push('/')}
+                    />
+                }
             </div>
         </div>
     )
