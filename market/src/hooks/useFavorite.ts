@@ -30,10 +30,10 @@ const useFavorite = ({productId, currentUser} : UseFavorite) => {
             let request;
             if(hasFavorite) {
                 //이미 좋아요가 눌러진 상태라면 취소하기 위한 delete
-                request = () => axios.delete(`/api/favorite/${productId}`)
+                request = () => axios.delete(`/api/favorites/${productId}`)
             } else {
                 //좋아요가 되어있지 않다면 추가
-                request = () => axios.post(`/api/favorite/${productId}`)
+                request = () => axios.post(`/api/favorites/${productId}`)
             }
             await request();
             //좋아요가 데이터베이스에 반영이되면 화면에도 반영하기위해 router.refresh
