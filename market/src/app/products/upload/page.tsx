@@ -6,6 +6,8 @@ import Button from '@/app/components/Button';
 import  Container from '@/app/components/Container';
 import Heading from '@/app/components/Heading';
 import ImageUpload from '@/app/components/ImageUpload';
+import { categories } from '@/app/components/categories/Categories';
+import CategoryInput from '@/app/components/categories/CategoryInput';
 
 const ProductUploadPage = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -25,6 +27,7 @@ const ProductUploadPage = () => {
     })
 
     const imageSrc = watch('imageSrc');
+    const category = watch('category');
 
     const onsubmit:SubmitHandler<FieldValues> = (data) => {
         
@@ -79,14 +82,25 @@ const ProductUploadPage = () => {
                     <hr/>
                     <div 
                         className='
-                        grid
-                        grid-cols-1
-                        md:grid-cols-2
-                        gap-3
-                        max-h-[50vh]
-                        overflow-y-auto
+                            grid
+                            grid-cols-1
+                            md:grid-cols-2
+                            gap-3
+                            max-h-[50vh]
+                            overflow-y-auto
                     '>
                         {/* category */}
+                        {categories.map((item) => 
+                            <div key={item.label} className='col-span-1'>
+                                <CategoryInput 
+                                    onClick={(category) => {setCustomValue('category', category)}}
+                                    selected = {category === item.path}
+                                    label = {item.label}
+                                    icon = {item.icon}
+                                    path = {item.path}
+                                />
+                            </div>
+                        )}
                     </div>
                     <hr/>
                     {/* kakaoMap */}
