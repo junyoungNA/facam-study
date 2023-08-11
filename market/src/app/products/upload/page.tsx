@@ -8,6 +8,7 @@ import Heading from '@/app/components/Heading';
 import ImageUpload from '@/app/components/ImageUpload';
 import { categories } from '@/app/components/categories/Categories';
 import CategoryInput from '@/app/components/categories/CategoryInput';
+import dynamic from 'next/dynamic';
 
 const ProductUploadPage = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +29,14 @@ const ProductUploadPage = () => {
 
     const imageSrc = watch('imageSrc');
     const category = watch('category');
+
+    const latitude = watch('latitude');
+    const longitude = watch('longitude');
+
+    //카카오맵 컴포넌트를 가져올때 dynamic import를 사용
+    const KakaoMap = dynamic (() => import('../../components/KakaoMap'), {
+        ssr : false //서버사이드 옵션을 끄기
+    })
 
     const onsubmit:SubmitHandler<FieldValues> = (data) => {
         
@@ -104,6 +113,7 @@ const ProductUploadPage = () => {
                     </div>
                     <hr/>
                     {/* kakaoMap */}
+                    <KakaoMap latitude={latitude} longitude={longitude} setCustomValue={setCustomValue} />
                     <Button label='상품 생성하기'></Button>
                 </form>
                 

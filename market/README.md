@@ -65,8 +65,19 @@
 - 클라우드 기반의 이미지 및 비디오 관리 서비스이다. 강력하면서 쉬운 API를 제공하고 있으며. 무료로 사용할 수 있다.
 - Cloudinary에서는 URL 파라미터를 통해 쉽게 이미지를 리사이징 할 수 있습니다.
 - 원본 비율과 다른 사이즈가 필요할 때는 이미지가 왜곡되어 보이지 않도록 이미지를 크롭해야 합니다. Cloudinary에서는 리사이징과 마찬가지로 URL 파라미터를 통해 쉽게 이미지를 크롭할 수 있습니다.
+
   - Cloudinary의 이미지 용량과 비주얼 퀄리티 사이에서 최적의 밸런스를 찾아준다고 한다.
-    ![cloudinary](./noteImg/cloudinary.png)
-    ![cloudinaryUse](./noteImg/cloudinaryUse.png)
-    ![cloudinaryConnet](./noteImg/cloudinaryConnet.png)
-- https://cloudinary.com/
+
+  #### Next-coludinary 와 함께 사용
+
+  ![cloudinary](./noteImg/cloudinary.png)
+  ![cloudinaryUse](./noteImg/cloudinaryUse.png)
+  ![cloudinaryConnet](./noteImg/cloudinaryConnet.png)
+
+* https://cloudinary.com/
+
+### Dynamic Import
+
+- dynamic import를 사요하면 모듈을 빌드 타임이 아닌 런타임에서 불러오도록 한다. -번들 파일을 분리하고 퍼포먼스가 향상될 수 있다.
+- 초기 로딩 시 사이즈가 크거나 초기 로딩부터 사용하지 않는 부분 , 또한 런타임에만 알 수 있는 정보에 기반해서 모듈을 가져와야할 때 사용한다.
+- kakaoMap api 같은 경우 로딩하는 시간이 필요하므로 dynamic import를 사용
