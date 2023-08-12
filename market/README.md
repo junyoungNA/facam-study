@@ -49,7 +49,7 @@
 
 - Prisma DB에 게속 접근하기위해(API 요청 후 DB 접근,next-auth apter접근 등) prismaClient를 생성하는 파일 생성
 
-  ![prisma client](./noteImg/image.png)
+  ![prisma client](./noteImg/PrismaClient.png)
 
 ### Next-auth getServerSession
 
