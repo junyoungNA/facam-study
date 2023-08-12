@@ -65,7 +65,7 @@ const RegisterPage = () => {
                 <p className='text-gray-400'>
                     Alreay a member? {" "}
                         <Link href='/auth/login' className='text-black hover:underline'>
-                            Register
+                            Login
                         </Link>
                     
                 </p>
