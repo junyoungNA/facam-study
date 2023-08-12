@@ -17,7 +17,6 @@ const ProductPage = async ({ params} : {params:Params} ) => {
             <EmptyState/>
         )
     }
-    console.log(product, 'productpage');
 
     return (
         <ProductClient
