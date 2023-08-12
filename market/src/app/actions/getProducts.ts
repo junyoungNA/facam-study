@@ -1,9 +1,12 @@
 import prisma from '@/helpers/prismadb';
+import { totalmem } from 'os';
 
 export interface ProductsParams {
     latitude? : number;
     longitude? : number;
     category? : string;
+    page? : number;
+    skip? : number;
 }
 
 export default async function getProducts (params : ProductsParams) {
@@ -33,6 +36,9 @@ export default async function getProducts (params : ProductsParams) {
                 lte : Number(longitude) + 0.01,
             }
         }
+
+        //product 게시물 몇개있는지 확인
+        const totalItems = await prisma.product.count({where: query});
         const products = await prisma.product.findMany({
             where : query,
             orderBy :  {
@@ -41,7 +47,8 @@ export default async function getProducts (params : ProductsParams) {
         })
 
         return {
-            data : products
+            data : products,
+            totalItems,
         }
     } catch (error : any) {
         throw new Error(error);
