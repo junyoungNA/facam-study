@@ -2,8 +2,8 @@ import React from 'react'
 import getCurrentUser from '../actions/getCurrent';
 import ChatClient from './ChatClient';
 
-const ChatPage = () => {
-    const currentUser = getCurrentUser();
+const ChatPage = async () => {
+    const currentUser = await getCurrentUser();
     return (
         <ChatClient currentUser={currentUser}/>
     )
