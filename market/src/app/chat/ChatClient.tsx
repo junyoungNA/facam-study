@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { User } from '@prisma/client'
 import { useState } from 'react'
+import axios from 'axios';
 
 interface ChatClientProps {
     currentUser ?: User | null,
@@ -13,6 +14,10 @@ const ChatClient = ({ currentUser} : ChatClientProps) => {
         receiverName:'',
         receiverImage :''
     })
+
+    useEffect(() => {
+        axios.get('/api/chat').then((res) => console.log(res));
+    }, [])
 
     const [layout, setLayout] = useState(true);
     return (
