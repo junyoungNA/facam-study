@@ -2,11 +2,11 @@
 import {User} from '@prisma/client'
 import { Message } from '@prisma/client'
 export type TUserWithChat = User & {
-    conversation : TConversation[]
+    conversations : TConversation[]
 }
 
 export type TConversation = {
     id : string;
-    message : Message[];
+    messages : Message[];
     users : User[];
 }
