@@ -13,11 +13,10 @@ const User = ({
     currentUserId
 } : UserProps) => {
 
-    console.log(currentUserId, user);
     const messagesWithCurrentUser = user.conversations.find((conversation : TConversation) =>{
         return conversation.users.find((user) => user.id === currentUserId);  
     });
-    console.log('messagesWithCurrentUser', messagesWithCurrentUser)
+    
     const latesetMessage = messagesWithCurrentUser?.messages.slice(-1)[0];
     return (
         <div className='grid grid-cols-[40px_1fr_50px] grid-rows-[40px] gap-3 py-3 px-4 border-b-[1px] hover:cursor-pointer hover:bg-orange-500'>
