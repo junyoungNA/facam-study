@@ -7,6 +7,7 @@ import useSWR from 'swr'
 import { TUserWithChat } from '@/types';
 import Loader from '../components/Loader';
 import Contatcs from '../components/chat/Contatcs';
+import Chat from '../components/chat/Chat';
 
 
 interface ChatClientProps {
@@ -32,13 +33,14 @@ const ChatClient = ({ currentUser} : ChatClientProps) => {
         axios.get('/api/chat').then((res) => console.log(res));
     }, [])
 
-    const [layout, setLayout] = useState(false);
+    //반응형 설정을 위한 state
+    const [layout, setLayout] = useState(true);
 
     if(isLoading) return <Loader/>
     if(error) return <p>error!</p>
     return (
         <main>
-            <div className='grid grid-cols-[1fr] md:grid-cols-[300px_1f]'>
+            <div className='grid grid-cols-[1fr] md:grid-cols-[300px_1fr]'>
                 {/* md보다 클때는 채팅 과 목록이 둘다 보여야함 */}
                 {/* md 보다 작고 layout이 true일 때는 목록이 안보임 */}
                 <section className={`md:flex ${layout && 'hidden'}`}>
@@ -49,10 +51,14 @@ const ChatClient = ({ currentUser} : ChatClientProps) => {
                         setReceiver={setReceiver}
                     />
                 </section>
-                 {/* md보다 클때는 채팅 과 목록이 둘다 보여야함 */}
+                {/* md보다 클때는 채팅 과 목록이 둘다 보여야함 */}
                 {/* md 보다 작고 layout이 false일 때는 채팅부분이 안보임 */}
                 <section className={`md:flex ${!layout && 'hidden'}`}>
-                    chat
+                    <Chat
+                        currentUser={currentUserWithMessage}
+                        receiver={receiver}
+                        setLayout={setLayout}
+                    />
                 </section>
             </div>
         
