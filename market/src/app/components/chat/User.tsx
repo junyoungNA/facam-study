@@ -12,12 +12,12 @@ const User = ({
     user,
     currentUserId
 } : UserProps) => {
-    console.log(user, 'user');
-    console.log(currentUserId, 'currentUserId');
+
+    console.log(currentUserId, user);
     const messagesWithCurrentUser = user.conversations.find((conversation : TConversation) =>{
-        conversation.users.find((user) => user.id === currentUserId);  
+        return conversation.users.find((user) => user.id === currentUserId);  
     });
-    console.log(messagesWithCurrentUser, 'messagesWithCurrentUser');
+    console.log('messagesWithCurrentUser', messagesWithCurrentUser)
     const latesetMessage = messagesWithCurrentUser?.messages.slice(-1)[0];
     return (
         <div className='grid grid-cols-[40px_1fr_50px] grid-rows-[40px] gap-3 py-3 px-4 border-b-[1px] hover:cursor-pointer hover:bg-orange-500'>
@@ -35,15 +35,14 @@ const User = ({
                     <p className=' text-xs font-medium text-gray-600'>[이미지]</p>
                 }
             </div>
-            <div>
-                {latesetMessage && (
-                    <p>
-                        {fromNow(latesetMessage.createdAt)}
-                    </p>
-                )
+            <div className='flex justify-center text-xs text-gray-500'>
+                    {latesetMessage && (
+                        <p className='whitespace-nowrap'>
+                            {fromNow(latesetMessage.createdAt)}
+                        </p>
+                    )
                 }
             </div>
-        
         </div>
     )
 }

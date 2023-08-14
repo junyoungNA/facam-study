@@ -81,3 +81,14 @@
 - dynamic import를 사요하면 모듈을 빌드 타임이 아닌 런타임에서 불러오도록 한다. -번들 파일을 분리하고 퍼포먼스가 향상될 수 있다.
 - 초기 로딩 시 사이즈가 크거나 초기 로딩부터 사용하지 않는 부분 , 또한 런타임에만 알 수 있는 정보에 기반해서 모듈을 가져와야할 때 사용한다.
 - kakaoMap api 같은 경우 로딩하는 시간이 필요하므로 dynamic import를 사용
+
+### 자바스크립트 ScrollIntoView
+
+- 특정 엘리먼트가 있는 위치로 스크롤을 이동시킬 수 있는 자바스크립트의 내장메서드! 인자로 true/false값 또는 option 객체를 받을 수 있다.
+- true/false: true의 경우 해당 요소의 제일 윗부분, false의 경우 제일 아랫부분으로 스크롤이 이동한다
+- https://developer.mozilla.org/ko/docs/Web/API/Element/scrollIntoView
+
+- 채팅 메시지 입력시 입력한 메세지가 바로 맨밑에 새롭게 추가되면서 스크롤도 맨밑으로 보내기 위해 사용
+
+-![Alt text](./noteImg/scrollRef.png)
+![Alt text](./noteImg/scrollIntoFn.png)

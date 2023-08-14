@@ -39,7 +39,7 @@ const Input:React.FC<InputProps> = ({
         setMessage('');
     }
     return (
-        <form className='relative flex items-center justify-between w-full gap-4 p-2 pl-4 border-[1px] border-gray-300 rounded-md shadow-sm' onSubmit={handleSubmit}>
+        <form className='relative flex items-center justify-between w-full gap-4 p-2 pl-4 py-3 border-[1px] border-gray-300 rounded-md shadow-sm' onSubmit={handleSubmit}>
             <input type="text" className='w-full text-base outline-none' placeholder='메세지를 작성해주세요.' value={message} onChange={(e) => setMessage(e.target.value)}/>
             <div className='text-2xl text-gray-200 cursor-pointer '>
                 <IoImageOutline/>

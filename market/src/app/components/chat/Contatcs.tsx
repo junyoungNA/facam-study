@@ -50,7 +50,6 @@ const Contatcs = ({
                                     user={user}
                                     currentUserId= {currentUser?.id}
                                 />
-                                유저에요
                             </div>
                         )
                     } )
