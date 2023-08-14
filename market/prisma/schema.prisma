@@ -47,23 +47,23 @@ enum UserType {
 model User {
   id             String    @id @default(cuid())
   name           String?
-  hashedPassword  String?
-  email           String?   @unique
-  emailVerified   DateTime?
-  image           String?
-  accounts        Account[]
-  sessions        Session[]
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  hashedPassword String?
+  email          String?   @unique
+  emailVerified  DateTime?
+  image          String?
+  accounts       Account[]
+  sessions       Session[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
 
-  userType        UserType @default(User)
+  userType UserType @default(User)
 
-  products        Product[]
-  favoriteIds     String[]
+  products    Product[]
+  favoriteIds String[]
 
-  conversations     Conversation[]
-  sendMessages     Message[] @relation("sender")
-  receivedMessages Message[] @relation("receiver")
+  conversations    Conversation[]
+  sendMessages     Message[]      @relation("sender")
+  receivedMessages Message[]      @relation("receiver")
 }
 
 model VerificationToken {
@@ -91,25 +91,25 @@ model Product {
 }
 
 model Conversation {
-  id    String @id @default(cuid())
-  name String
-  senderId String
+  id         String    @id @default(cuid())
+  name       String?
+  senderId   String
   receiverId String
-  users User[]
-  messages Message[]
-  createdAt DateTime @default(now())
+  users      User[]
+  messages   Message[]
+  createdAt  DateTime  @default(now())
 }
 
 model Message {
-  id String @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  text String? //이미지만 올리수도 있기때문에 옵셔널
-  image String? //텍스만 보낼수 있기때문에 옵셔널
-  sender User @relation(name:"sender", fields: [senderId], references: [id])
-  senderId String
-  receiver User @relation(name:"receiver", fields: [receiverId], references: [id])
-  receiverId String
-  conversation Conversation @relation(fields: [conversationId], references: [id])
+  id             String       @id @default(cuid())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  text           String? //이미지만 올리수도 있기때문에 옵셔널
+  image          String? //텍스만 보낼수 있기때문에 옵셔널
+  sender         User         @relation(name: "sender", fields: [senderId], references: [id])
+  senderId       String
+  receiver       User         @relation(name: "receiver", fields: [receiverId], references: [id])
+  receiverId     String
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
   conversationId String
 }

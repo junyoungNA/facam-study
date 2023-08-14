@@ -19,6 +19,10 @@ const Input:React.FC<InputProps> = ({
     const handleSubmit = async (e : FormEvent<HTMLFormElement>)  => {
         e.preventDefault();
         const imageUrl = '';
+        
+        if(!receiverId) {
+            return console.log('상대방이 없습니다.'); 
+        }
 
         if(message || imageUrl) {
             try {   
