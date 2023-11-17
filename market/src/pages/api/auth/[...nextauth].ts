@@ -1,5 +1,8 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import KakaoProvider from "next-auth/providers/kakao";
+
+
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from '@/helpers/prismadb';
@@ -20,8 +23,8 @@ export const authOptions : NextAuthOptions = {
                 // e.g. domain, username, password, 2FA token, etc.
                 // You can pass any HTML attribute to the <input> tag through the object.
                 credentials: {
-                email: { label: "Email", type: "text", },
-                password: { label: "Password", type: "password" }
+                    email: { label: "Email", type: "text", },
+                    password: { label: "Password", type: "password" }
                 },
                 async authorize(credentials, req) {
                 // Add logic here to look up the user from the credentials supplied
@@ -60,13 +63,14 @@ export const authOptions : NextAuthOptions = {
         signIn:'/auth/login'
     },
     callbacks: {
-        async jwt({token, user}) {          
+        async jwt({token, user}) {     
+            console.log('token', token);     
+            console.log('user', user);     
             return {...token, ...user}
         },
         async session({session, token}) {
             // console.log(session, token);
             session.user = token;
-
             return session
         }
     }
