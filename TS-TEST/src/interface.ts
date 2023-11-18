@@ -1,3 +1,20 @@
+// 선택적 속성 - ?
+// 읽기전용 속성 - readonly
+
+interface User1 {
+    name : string;
+    readonly age : number;
+    isValid? :boolean;
+}
+
+const user1 : User1  = {
+    name :'qwer' ,
+    age : 12
+    // isValid 값은 들어가도 되고 안들어가도됨
+}
+    user1.isValid = true;
+    // user1.age = 13 //에러 발생 readonly 속성으로 수정불가!!
+
 // interface 타입추론 : 어떠한 판단을 근거로 삼아서 다른 판단을 이끌어 냄
 // 타입스크립트는 3가지 방식으로 타입을 추론할 수 있다
 // 초기화된 변수
